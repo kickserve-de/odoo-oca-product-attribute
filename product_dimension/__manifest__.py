@@ -14,4 +14,8 @@
     "data": ["views/product_view.xml"],
     "installable": True,
     "images": ["static/description/icon.png"],
+    
+    
+    # Post Init Hook
+    'post_init_hook': 'create_dimension_uoms',
 }

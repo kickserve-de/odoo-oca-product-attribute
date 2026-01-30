@@ -10,7 +10,7 @@
     "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/product-attribute",
-    "depends": ["product", "uom", "sale"],
+    "depends": ["product", "uom", "sale_management"],
     "data": ["views/product_view.xml"],
     "installable": True,
     "images": ["static/description/icon.png"],

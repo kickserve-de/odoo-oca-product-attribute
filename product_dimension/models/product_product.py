@@ -39,4 +39,13 @@ class ProductProduct(models.Model):
 
     @api.model
     def _get_dimension_uom_domain(self):
-        return [("category_id", "=", self.env.ref("uom.uom_categ_length").id)]
+        """
+        Odoo 19 has no UoM categories.
+        We restrict to Meter and UoMs that share Meter as reference.
+        """
+        meter = self.env.ref("uom.product_uom_meter")
+        return [
+            "|",
+            ("id", "=", meter.id),
+            ("relative_uom_id", "=", meter.id),
+        ]

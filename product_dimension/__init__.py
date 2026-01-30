@@ -19,7 +19,7 @@ def create_dimension_uoms(env):
     for uom_data in uoms_to_create:
         # Only create if UoM with the same name and relative_uom_id = meter does NOT exist
         existing = env["uom.uom"].search([
-            ("name", "=", uom_data["name"]),
+            ("relative_factor", "=", uom_data["factor"]),
             ("relative_uom_id", "=", meter.id)
         ], limit=1)
         if not existing:

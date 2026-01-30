@@ -84,5 +84,8 @@ docs/_build/
 *~
 *.swp
 
+# OSX Files
+.DS_Store
+
 # OCA rules
 !static/lib/
